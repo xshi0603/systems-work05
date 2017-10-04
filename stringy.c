@@ -12,7 +12,7 @@ int stringlen(char *str){
 
 char* stringcpy(char *dest, char *source){
   int i;
-  for(i = 0; i < strlen(source);i++){
+  for(i = 0; i < stringlen(source);i++){
     dest[i] = source[i];
   }
   dest[i] = 0;
