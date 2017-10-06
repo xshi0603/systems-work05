@@ -139,7 +139,7 @@ int main(){
   char ours11[] = "bbbbbbbbbbbbbbc";
   printf("s11 = %s\n",s11);
   char s12 = 'b';
-  char ours12 = 'c';
+  char ours12 = 'b';
   printf("s12 = %c\n", s12);
   char s13 = 'c';
   char ours13 = 'c';
