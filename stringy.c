@@ -54,7 +54,7 @@ char * stringchr( char *s, char c ) {
   int i;
   for (i = 0; i < stringlen(s); i++) {
     if (s[i] == c) {
-      return s;
+      return &s[i];
     }
   }
   return NULL;
@@ -135,16 +135,24 @@ int main(){
   printf("[ours]: %d\n",stringcmp(ours6,ours10));
   printf("\n");
 
-  char s11[] = "Big brown doggy";
-  char ours11[] = "Big brown doggy";
+  char s11[] = "bbbbbbbbbbbbbbc";
+  char ours11[] = "bbbbbbbbbbbbbbc";
   printf("s11 = %s\n",s11);
-  char s12[] = "B";
-  char ours12[] = "B";
+  char s12 = 'b';
+  char ours12 = 'c';
   printf("s12 = %c\n", s12);
+  char s13 = 'c';
+  char ours13 = 'c';
+  printf("s13 = %c\n", s13);
   printf("\n");
 
-  printf("Testing strchr(s11,\"B\")\n");
+  printf("Testing strchr(s11,\"b\")\n");
   printf("[standard]: %s\n",strchr(s11,s12));
-  printf("[ours]: %s\n",stringchr(s11,s12));
+  printf("[ours]: %s\n",stringchr(ours11,ours12));
+  printf("\n");
+
+  printf("Testing strchr(s11,\"c\")\n");
+  printf("[standard]: %s\n",strchr(s11,s13));
+  printf("[ours]: %s\n",stringchr(ours11,ours13));
   printf("\n");
 }
